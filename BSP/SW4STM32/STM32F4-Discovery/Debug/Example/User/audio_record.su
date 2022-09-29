@@ -1,0 +1,4 @@
+C:/Users/gsahinpi/STM32CubeIDE/workspace2/BSP/Src/audio_record.c:83:6:AudioRecord_Test	24	static
+C:/Users/gsahinpi/STM32CubeIDE/workspace2/BSP/Src/audio_record.c:218:6:BSP_AUDIO_IN_TransferComplete_CallBack	0	static
+C:/Users/gsahinpi/STM32CubeIDE/workspace2/BSP/Src/audio_record.c:228:6:BSP_AUDIO_IN_HalfTransfer_CallBack	0	static
+C:/Users/gsahinpi/STM32CubeIDE/workspace2/BSP/Src/audio_record.c:238:6:BSP_AUDIO_IN_Error_Callback	0	static
