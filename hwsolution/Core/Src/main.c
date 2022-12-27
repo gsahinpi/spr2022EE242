@@ -97,7 +97,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-  myAccConfigDef.dataRate = LIS3DSH_DATARATE_25;
+    myAccConfigDef.dataRate = LIS3DSH_DATARATE_25;
   	myAccConfigDef.fullScale = LIS3DSH_FULLSCALE_4;
   	myAccConfigDef.antiAliasingBW = LIS3DSH_FILTER_BW_50;//update rate
   	myAccConfigDef.enableAxes = LIS3DSH_XYZ_ENABLE;
@@ -119,10 +119,16 @@ int main(void)
 	  if (LIS3DSH_PollDRDY(100)==true)
 	  {
 		myscaledata=LIS3DSH_GetDataScaled();
-		char *bufx[20];
-			  	char *bufy[20];
-			  	char *bufz[20];
-				memset( bufx, 0, sizeof( bufx));
+		//char *bufx[20];
+
+			  //	char *bufy[20];
+
+		//char *bufz[20];
+		char buf [40];
+
+	    sprintf(buf ,"%f,%f,%f\n",myscaledata.x,myscaledata.y,myscaledata.z);
+
+				/*memset( bufx, 0, sizeof( bufx));
 				memset( bufy, 0, sizeof( bufy));
 				memset( bufz, 0, sizeof( bufz));
 			  	gcvt(myscaledata.x, 9, bufx);
@@ -133,13 +139,13 @@ int main(void)
 			  	strcat(message,bufy);
 			  	strcat(message,comma);
 			  	strcat(message,bufz);
-			  	strcat(message,end);
+			  	strcat(message,end);*/
 
 
 
 
-			  	CDC_Transmit_FS((uint8_t *) message, strlen(message));
-			  	memset(message, 0, sizeof(message));
+			  	CDC_Transmit_FS((uint8_t *) buf, strlen(buf));
+
 			  	  HAL_Delay(300)
 			  	;
 
